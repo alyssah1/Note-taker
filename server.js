@@ -42,8 +42,19 @@ app.post("/api/notes", function(req, res) {
 
 // deleting the note 
 app.delete("/api/notes:id", function(req,res) {
-    
-});   
+    var deleteNotes = req.params.id;
+    for( var i=0; i < db.length; i++){
+        if(deleteNotes == db[i].id){
+            db.splice(i, 1);
+
+            fs.writeFile("./db/db.json", JSON.stringify(db), function(err) {
+                if (err) throw err;
+                return;
+            })
+        }
+    }
+    res.end();
+});
 
 app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "/public/index.html"));
