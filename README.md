@@ -1,6 +1,6 @@
 # Unit 11 Express Homework: Note Taker
 
-## Created by Alyssa Hollowel
+## Created by Alyssa Hollowell
 
 # Description
 This homework assignment allows the user to add, save and delete notes.
